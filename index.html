@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>6th National English Language Carnival 2025 – IELC</title>
+  <meta name="description" content="Ideal English Language Club presents the 6th National English Language Carnival (NELC) 2025 at Ideal School & College, Motijheel, Dhaka – Sept 26–27. Join us!" />
+  <link rel="icon" href="image-removebg-preview (1).png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy:#051838;/* deep brand navy */
+      --mid:#132e59;/* headline darker blue */
+      --ink:#203a6d;
+      --sky:#cfe0f3;/* pale blue */
+      --frost:#e9f2fb;/* lightest */
+      --accent:#5b7bbd;/* accents */
+      --white:#ffffff;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:'Sora', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--navy); background:var(--frost); overflow-x:hidden;
+    }
+    a{color:inherit; text-decoration:none}
+    /* ===== Loader ===== */
+    #loader{
+      position:fixed; inset:0; display:grid; place-items:center; z-index:9999; background:linear-gradient(135deg,var(--frost),#dbe7fb 30%, #bed1f0 70%, var(--frost));
+    }
+    .loader-logo{ display:flex; align-items:center; gap:12px; }
+    .loader-logo-img{
+      width: 60px;
+      height: auto;
+      animation: breathe 2.5s ease-in-out infinite;
+    }
+    @keyframes breathe{
+        0%, 100% { transform: scale(1); opacity: .85; }
+        50% { transform: scale(1.05); opacity: 1; }
+    }
+    .loader-text{font-weight:800; font-size:1.6rem; letter-spacing:.02em}
+    .dots{display:inline-block; width:36px; text-align:left}
+    .dots span{display:inline-block; width:6px; height:6px; margin:0 2px; border-radius:50%; background:var(--mid); animation:blink 1.2s infinite}
+    .dots span:nth-child(2){animation-delay:.15s}
+    .dots span:nth-child(3){animation-delay:.3s}
+    @keyframes blink{0%,60%,100%{opacity:.2}30%{opacity:1}}
+
+    /* ===== Navigation ===== */
+    .nav{position:sticky; top:0; z-index:60; backdrop-filter:saturate(140%) blur(8px);
+      background:linear-gradient(180deg,rgba(233,242,251,.9),rgba(233,242,251,.6)); border-bottom:1px solid rgba(32,58,109,.08);
+    }
+    .nav .inner{max-width:1200px; margin:0 auto; padding:12px 20px; display:flex; align-items:center; justify-content:space-between}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:700}
+    .brand .header-logo-img{
+      width: 32px;
+      height: auto;
+    }
+    .nav a.btn{padding:10px 16px; border-radius:999px; border:1px solid rgba(32,58,109,.15); font-weight:600}
+    .nav a.cta{background:var(--mid); color:#fff; border-color:transparent}
+
+    /* ===== Animated background – flowing wave lines ===== */
+    .wave-wrap{position:fixed; inset:0; z-index:-1; overflow:hidden}
+    /* subtle moving chevrons like the poster */
+    .chevrons{position:absolute; inset:-10% -10% -10% -10%; background:
+      repeating-linear-gradient(135deg, rgba(32,58,109,.06) 0 2px, transparent 2px 40px);
+      opacity:.6; filter:blur(0.4px); animation:chev 18s linear infinite;
+    }
+    @keyframes chev{to{background-position:600px 600px}}
+    /* SVG waves layer */
+    .waves{position:absolute; inset:0;}
+    svg#waveSVG{width:180%; height:180%; transform:translate(-20%,-10%);}
+    .wave-path{fill:none; stroke:url(#strokeGrad); stroke-width:1.2; stroke-linecap:round; stroke-dasharray:2 18; opacity:.55;
+      animation:flow 24s linear infinite;}
+    .wave-path:nth-child(2){animation-duration:28s; stroke-dasharray:3 22; opacity:.35}
+    .wave-path:nth-child(3){animation-duration:34s; stroke-dasharray:1.5 16; opacity:.45}
+    @keyframes flow{to{stroke-dashoffset:-1200; transform:translateX(-60px)}}
+
+    /* ===== Sections ===== */
+    section{position:relative}
+    .container{max-width:1200px; margin:0 auto; padding:70px 20px}
+
+    /* Hero */
+    .hero{min-height:92vh; display:grid; align-items:center;}
+    .badge{display:inline-flex; align-items:center; gap:10px; padding:6px 12px; border-radius:999px; background:rgba(32,58,109,.06); border:1px solid rgba(32,58,109,.14); font-weight:600; font-size:.92rem}
+    .title{font-family:'DM Serif Display', serif; font-size:clamp(2.4rem,6vw,4.6rem); line-height:1.05; margin:14px 0 6px; color:var(--mid)}
+    .subtitle{font-weight:400; font-size:1.08rem; max-width:800px}
+    .hero-cta{display:flex; gap:12px; margin-top:28px; flex-wrap:wrap}
+    .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 18px; border-radius:14px; border:1px solid rgba(32,58,109,.12); background:#fff; box-shadow:0 10px 30px rgba(32,58,109,.08); font-weight:700}
+    .btn.primary{background:var(--mid); color:#fff; border-color:transparent}
+    .btn.ghost{background:transparent}
+
+    /* Info cards */
+    .grid{display:grid; gap:18px}
+    .grid.cols-2, .grid.cols-3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+    .card{background:#fff; border-radius:18px; padding:22px; border:1px solid rgba(32,58,109,.08); box-shadow:0 10px 30px rgba(32,58,109,.06)}
+    .card h3{margin:6px 0 8px; font-size:1.1rem}
+    .muted{color:#3a558a}
+
+    /* Events */
+    .pill{display:inline-block; padding:4px 10px; border-radius:999px; font-weight:700; font-size:.8rem; border:1px solid rgba(32,58,109,.15); background:rgba(32,58,109,.06); margin:2px 6px 8px 0}
+    details{background:#fff; border-radius:16px; border:1px solid rgba(32,58,109,.08); box-shadow:0 8px 24px rgba(32,58,109,.06); overflow:hidden}
+    details+details{margin-top:12px}
+    summary{list-style:none; cursor:pointer; padding:18px 20px; font-weight:700; display:flex; align-items:center; justify-content:space-between}
+    summary::-webkit-details-marker{display:none}
+    .summary-title{display:flex; align-items:center; gap:12px}
+    .badge-round{width:28px; height:28px; border-radius:999px; background:linear-gradient(135deg,var(--mid),#8ea0c9); box-shadow:inset 0 0 0 2px rgba(255,255,255,.6)}
+    .summary-meta{font-size:.9rem; opacity:.8}
+    .details-body{padding:2px 22px 18px; color:#284a85}
+
+    /* Fees & Groups */
+    .pricing{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px}
+    .price{background:#fff; border:1px solid rgba(32,58,109,.1); border-radius:16px; padding:20px; text-align:center; box-shadow:0 10px 30px rgba(32,58,109,.06)}
+    .price h4{margin:10px 0 6px}
+    .big{font-size:2rem; font-weight:800; color:var(--mid)}
+
+    /* Contacts */
+    .contacts{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px}
+    .person{background:#fff; border:1px solid rgba(32,58,109,.1); border-radius:14px; padding:16px}
+    .person h4{margin:2px 0}
+    .role{font-weight:600; opacity:.8}
+    .small{font-size:.92rem}
+
+    /* Footer */
+    footer{padding:40px 20px; text-align:center; color:#395a95}
+
+    /* Scroll reveal */
+    [data-reveal]{opacity:0; transform:translateY(14px); transition:all .7s cubic-bezier(.2,.7,.2,1)}
+    [data-reveal].reveal{opacity:1; transform:none}
+
+    /* Helper */
+    .section-title{font-size:clamp(1.8rem,3.6vw,2.4rem); font-family:'DM Serif Display',serif; color:var(--mid); margin:0 0 14px}
+    .section-sub{color:#35558a; margin-top:-6px}
+
+
+    /* ===== START: Mobile Responsiveness ===== */
+    .menu-toggle {
+      display: none; /* Hidden on desktop */
+      background: none; border: none; cursor: pointer; padding: 0;
+      width: 28px; height: 22px; z-index: 100;
+      flex-direction: column; justify-content: space-between;
+    }
+    .hamburger-line {
+      display: block; width: 100%; height: 3px;
+      background-color: var(--navy); border-radius: 3px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    @media (max-width: 768px) {
+      .brand .brand-text { display: none; } /* Hide long text on mobile */
+      
+      .nav .links {
+        position: fixed; inset: 0;
+        background: rgba(233, 242, 251, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column; justify-content: center; align-items: center;
+        gap: 24px;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+        padding: 20px; font-size: 1.2rem;
+      }
+      .nav .links.active { transform: translateX(0); }
+      .menu-toggle { display: flex; }
+      
+      /* Animate Hamburger to "X" */
+      .menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(1) { transform: translateY(9.5px) rotate(45deg); }
+      .menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(2) { opacity: 0; }
+      .menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(3) { transform: translateY(-9.5px) rotate(-45deg); }
+      
+      body.no-scroll { overflow: hidden; } /* Stop body scroll when menu is open */
+
+      /* General Layout Adjustments */
+      .container { padding: 50px 20px; }
+      .hero { min-height: 85vh; text-align: center; }
+      .hero-cta { justify-content: center; }
+      .badge { margin: 0 auto; }
+      .title { font-size: clamp(2rem, 8vw, 2.4rem); } /* Adjust title size */
+      
+      .section-title, .section-sub { text-align: center; }
+      .summary { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .pill { margin: 4px; }
+      .contacts, .pricing { text-align: left; }
+      .price { text-align: center; }
+    }
+    /* ===== END: Mobile Responsiveness ===== */
+  </style>
+</head>
+<body>
+  <!-- Loader -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-logo">
+      <img src="image-removebg-preview (1).png" alt="IELC Logo" class="loader-logo-img">
+  </div>
+  </div>
+
+  <!-- Moving wave background -->
+  <div class="wave-wrap" aria-hidden="true">
+    <div class="chevrons"></div>
+    <div class="waves">
+      <svg id="waveSVG" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="strokeGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#7f97c7"/>
+            <stop offset="60%" stop-color="#35558a"/>
+            <stop offset="100%" stop-color="#9fb2d9"/>
+          </linearGradient>
+        </defs>
+        <!-- Three flowing paths -->
+        <path class="wave-path" d="M0,120 C120,80 240,160 360,120 C480,80 600,160 720,120 C840,80 960,160 1080,120 C1200,80 1320,160 1440,120"/>
+        <path class="wave-path" d="M0,300 C140,260 260,340 380,300 C500,260 620,340 740,300 C860,260 980,340 1100,300 C1220,260 1340,340 1460,300"/>
+        <path class="wave-path" d="M0,520 C160,470 280,560 400,520 C520,480 640,560 760,520 C880,480 1000,560 1120,520 C1240,480 1360,560 1480,520"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="inner">
+      <div class="brand">
+        <img src="image-removebg-preview (1).png" alt="IELC Logo" class="header-logo-img">
+        <span class="brand-text">Ideal English Language Club</span>
+      </div>
+      <div class="links" id="nav-links">
+        <a class="btn ghost" href="#events">Events</a>
+        <a class="btn ghost" href="#fees">Fees</a>
+        <a class="btn ghost" href="#groups">Groups</a>
+        <a class="btn cta" href="#register">Register</a>
+      </div>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container">
+      <span class="badge" data-reveal>IELC Presents</span>
+      <h1 class="title" data-reveal style="transition-delay:.06s">6th <em>National</em> English Language Carnival</h1>
+      <p class="subtitle" data-reveal style="transition-delay:.12s">From the first spark of inspiration to the final echo of applause, join us as we explore the boundless horizons of English in a nationwide gathering of brilliance, creativity and shared dreams.</p>
+      <div class="hero-cta" data-reveal style="transition-delay:.18s">
+        <a class="btn primary" href="#register">Register Now</a>
+        <a class="btn" href="#about">Learn More</a>
+      </div>
+      <div class="grid cols-2" style="margin-top:34px" data-reveal>
+        <div class="card">
+          <h3>📍 Venue</h3>
+          <div class="muted">Ideal School & College, Motijheel, Dhaka</div>
+        </div>
+        <div class="card">
+          <h3>📅 Date</h3>
+          <div class="muted">September 26–27, 2025 • 08:00–17:30</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title" data-reveal>What is NELC?</h2>
+      <p class="section-sub" data-reveal style="transition-delay:.08s">A two‑day national celebration of talent, intellect and artistry where Bangladesh’s brightest compete, collaborate and create.</p>
+      <div class="grid cols-3" style="margin-top:18px">
+        <div class="card" data-reveal>
+          <h3>Three Groups</h3>
+          <div>• Junior: Class 6–8<br/>• Senior: Class 9–10<br/>• College: Class 11–12</div>
+        </div>
+        <div class="card" data-reveal style="transition-delay:.06s">
+          <h3>13+ Events</h3>
+          <div>Olympiad, Extempore, Turn Coat, Quizmania, Spell Master, Outline Movies, Blog, Sports Quiz, Recitation, Submissions & more!</div>
+        </div>
+        <div class="card" data-reveal style="transition-delay:.12s">
+          <h3>Hosted by</h3>
+          <div>Ideal English Language Club (IELC)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events -->
+  <section id="events">
+    <div class="container">
+      <h2 class="section-title" data-reveal>Event Line‑up</h2>
+      <p class="section-sub" data-reveal style="transition-delay:.08s">One‑Round events [1‑R] • Two‑Round events [2‑R] • Categories: <span class="pill">J</span><span class="pill">S</span><span class="pill">C</span></p>
+
+      <!-- Quick pills list -->
+      <div class="muted" style="margin:14px 0 18px" data-reveal>
+        <span class="pill">English Olympiad (J, S, C) [1‑R]</span>
+        <span class="pill">Instant Story Writing (J, S, C) [1‑R]</span>
+        <span class="pill">Word Game (J, S, C) [1‑R]</span>
+        <span class="pill">Extempore Speech (J, S, C) [2‑R]</span>
+        <span class="pill">Turn Coat (S, C) [2‑R]</span>
+        <span class="pill">Quizmania (J, S, C) [1‑R]</span>
+        <span class="pill">Outline Movies (J, S, C) [1‑R]</span>
+        <span class="pill">Spell Master (J, S, C) [2‑R]</span>
+        <span class="pill">Submissions: Wall Mag / Scrapbook / Sketch / Article / Photography (J, S, C)</span>
+        <span class="pill">Mega / Team Quiz (S, C) [2‑R]</span>
+        <span class="pill">Multimedia + Animation (S, C) [1‑R]</span>
+        <span class="pill">Sports Quiz (J, S, C) [1‑R]</span>
+        <span class="pill">Poem Recitation (J, S, C) [2‑R]</span>
+        <span class="pill">Blog (J, S) [1‑R]</span>
+        <span class="pill">Graffiti (J, S, C) [1‑R]</span>
+        <span class="pill">Signature Event: 404 Not Found (J, S, C)</span>
+      </div>
+
+      <!-- Collapsible details (trimmed yet comprehensive) -->
+      <div>
+        <details data-reveal open>
+          <summary>
+            <div class="summary-title"><span class="badge-round"></span> English Olympiad</div>
+            <div class="summary-meta">Solo • 25 mins • Grammar, literature, vocab • [1‑R]</div>
+          </summary>
+          <div class="details-body">
+            A classic written test covering multiple‑choice, one‑word and short descriptive questions to assess overall command of English across Junior, Senior and College groups.
+          </div>
+        </details>
+        <details data-reveal>
+          <summary>
+            <div class="summary-title"><span class="badge-round"></span> Instant Story Writing</div>
+            <div class="summary-meta">Solo • Prompt‑based • 25 mins • [1‑R]</div>
+          </summary>
+          <div class="details-body">Unleash the storyteller within. Receive a prompt and craft a compelling short story within the time limit.</div>
+        </details>
+        <details data-reveal>
+          <summary>
+            <div class="summary-title"><span class="badge-round"></span> Word Game</div>
+            <div class="summary-meta">Solo • Jumbled Words + Crossword • 25 mins • [1‑R]</div>
+          </summary>
+          <div class="details-body">Test vocabulary and pattern recognition with letter jumbles and a themed crossword.
+          </div>
+        </details>
+        <details data-reveal>
+          <summary>
+            <div class="summary-title"><span class="badge-round"></span> Extempore Speech</div>
+            <div class="summary-meta">Solo • Topic given 3–4 mins prior • [2‑R]</div>
+          </summary>
+          <div class="details-body">Speak on a surprise topic with minimal prep. Top 6 per group advance to a final round.</div>
+        </details>
+        <details data-reveal>
+          <summary>
+            <div class="summary-title"><span class="badge-round"></span> Turn Coat</div>
+            <div class="summary-meta">Solo • For/Against same topic • [2‑R] (S, C)</div>
+          </summary>
+          <div class="details-body">Argue both sides of a motion with timed flips. Preliminary: 1.5+1.5 mins; Final: 2+2 mins.</div>
+        </details>
+        <details data-reveal>
+          <summary>
+            <div class="summary-title"><span class="badge-round"></span> Quizmania</div>
+            <div class="summary-meta">Solo quiz • 25 mins • [1‑R]</div>
+          </summary>
+          <div class="details-body">From Literature to Sherlock, Potterhead, Marvel/DC and Sports—pick your passion and ace the paper.</div>
+        </details>
+        <details data-reveal>
+          <summary>
+            <div class="summary-title"><span class="badge-round"></span> Outline Movies</div>
+            <div class="summary-meta">Solo • 25 mins • [1‑R]</div>
+          </summary>
+          <div class="details-body">Summarize a movie’s arc with clarity and style—no spoilers needed, just great storytelling.</div>
+        </details>
+        <details data-reveal>
+          <summary>
+            <div class="summary-title"><span class="badge-round"></span> Spell Master</div>
+            <div class="summary-meta">Written + Verbal • [2‑R]</div>
+          </summary>
+          <div class="details-body">Round 1: 30‑min written spell test. Round 2: on‑stage verbal for the title of master speller.</div>
+        </details>
+        <details data-reveal>
+          <summary>
+            <div class="summary-title"><span class="badge-round"></span> Submissions</div>
+            <div class="summary-meta">Wall Magazine • Scrapbook • Sketch • Photography • Article</div>
+          </summary>
+          <div class="details-body">
+            <strong>Wall Magazine (Team 2–3):</strong> Up to 6×4 ft on cork; submit Day‑1 8:30–10:30; present to judges. Respect community guidelines.<br/>
+            <strong>Scrapbook (Solo):</strong> Personal themed book with research, visuals and design; submit on campus.<br/>
+            <strong>Sketch (Solo):</strong> Any concept on white cartridge paper; submit in time; no vulgar content.<br/>
+            <strong>Photography (Solo – DSLR/Mobile):</strong> Local culture & life; minor edits allowed; up to 5 photos; JPEG/PNG; ≤10 MB each.<br/>
+            <strong>Article (Solo):</strong> Original, insightful piece on campus submission.
+          </div>
+        </details>
+        <details data-reveal>
+          <summary>
+            <div class="summary-title"><span class="badge-round"></span> Mega / Team Quiz</div>
+            <div class="summary-meta">Teams of 3–5 • Written prelim + Stage buzzer • 6k prize pool</div>
+          </summary>
+          <div class="details-body">Top six teams reach a buzzer final; open team composition across institutions. Prizes: 3k / 2k / 1k.</div>
+        </details>
+        <details data-reveal>
+          <summary>
+            <div class="summary-title"><span class="badge-round"></span> Multimedia + Animation Presentation</div>
+            <div class="summary-meta">Teams of 2 • 5‑min presentation • Single round</div>
+          </summary>
+          <div class="details-body">Create and deliver a polished multimedia pitch. Bring your own laptop/device. Content must respect guidelines.</div>
+        </details>
+        <details data-reveal>
+          <summary>
+            <div class="summary-title"><span class="badge-round"></span> Sports Quiz</div>
+            <div class="summary-meta">Solo written • [1‑R]</div>
+          </summary>
+          <div class="details-body">All things sport—from classics to current highlights.</div>
+        </details>
+        <details data-reveal>
+          <summary>
+            <div class="summary-title"><span class="badge-round"></span> Poem Recitation</div>
+            <div class="summary-meta">Solo performance • [2‑R]</div>
+          </summary>
+          <div class="details-body">Choose any poem; top 6 per group progress to the final performance.</div>
+        </details>
+        <details data-reveal>
+          <summary>
+            <div class="summary-title"><span class="badge-round"></span> Blog</div>
+            <div class="summary-meta">Solo writing • 25 mins • [1‑R] (J,S)</div>
+          </summary>
+          <div class="details-body">Write like a digital storyteller: clarity, voice and audience engagement matter.</div>
+        </details>
+        <details data-reveal>
+          <summary>
+            <div class="summary-title"><span class="badge-round"></span> Graffiti</div>
+            <div class="summary-meta">Solo art • 1 hour • [1‑R]</div>
+          </summary>
+          <div class="details-body">Turn a blank board into bold expression—impactful, original, unmistakably you.</div>
+        </details>
+        <details data-reveal>
+          <summary>
+            <div class="summary-title"><span class="badge-round"></span> Signature Event: 404 Not Found</div>
+            <div class="summary-meta">Teams of 2 • Race‑style puzzle hunt • 6k prize pool</div>
+          </summary>
+          <div class="details-body">A high‑energy chase through riddles, tasks and hidden clues. Fastest team to the destination wins. Prizes: 3k / 2k / 1k.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fees & Groups -->
+  <section id="fees">
+    <div class="container">
+      <h2 class="section-title" data-reveal>Registration & Fees</h2>
+      <p class="section-sub" data-reveal style="transition-delay:.08s">Affordable entries for all students. Scan the poster QR or use the website CTA below.</p>
+      <div class="pricing" data-reveal>
+        <div class="price">
+          <h4>General Events</h4>
+          <div class="big">BDT 100</div>
+          <div>Except Signature, Mega Quiz & Graffiti</div>
+        </div>
+        <div class="price">
+          <h4>Mega Quiz (Team)</h4>
+          <div class="big">BDT 250</div>
+          <div>Team‑based; prelim + stage round</div>
+        </div>
+        <div class="price">
+          <h4>Signature Event</h4>
+          <div class="big">BDT 200</div>
+          <div>404 Not Found</div>
+        </div>
+        <div class="price">
+          <h4>Graffiti Artwork</h4>
+          <div class="big">BDT 100</div>
+          <div>Solo art segment</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="groups">
+    <div class="container">
+      <h2 class="section-title" data-reveal>Participant Groups</h2>
+      <div class="grid cols-3" style="margin-top:10px">
+        <div class="card" data-reveal>
+          <h3>Junior</h3>
+          <div>Class 6–8</div>
+        </div>
+        <div class="card" data-reveal style="transition-delay:.06s">
+          <h3>Senior</h3>
+          <div>Class 9–10</div>
+        </div>
+        <div class="card" data-reveal style="transition-delay:.12s">
+          <h3>College</h3>
+          <div>Class 11–12</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Register -->
+  <section id="register">
+    <div class="container">
+      <h2 class="section-title" data-reveal>Ready to Join?</h2>
+      <p class="section-sub" data-reveal style="transition-delay:.08s">Mark your calendar: <strong>Sept 26–27, 2025</strong> • Ideal School & College, Motijheel, Dhaka.</p>
+      <div class="hero-cta" data-reveal>
+        <a class="btn primary" href="#" onclick="alert('Registration portal will open here. You can link your Google Form or portal URL.'); return false;">Open Registration</a>
+        <a class="btn" href="https://maps.google.com/?q=Ideal+School+and+College+Motijheel" target="_blank" rel="noreferrer">View Venue on Maps</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacts -->
+  <section id="contacts">
+    <div class="container">
+      <h2 class="section-title" data-reveal>Contacts</h2>
+      <p class="section-sub" data-reveal style="transition-delay:.08s">Administrative & event‑related queries</p>
+
+      <h3 class="section-sub" style="margin:18px 0 8px">Administrative</h3>
+      <div class="contacts" data-reveal>
+        <div class="person">
+          <h4>Ahmad Abid Ahsan</h4>
+          <div class="role">President • 8th Executive Committee</div>
+          <div class="small">📞 01720802197 • ✉️ abidahsan0305@gmail.com</div>
+        </div>
+        <div class="person">
+          <h4>Md Bin Wasy</h4>
+          <div class="role">General Secretary • 8th Executive Committee</div>
+          <div class="small">📞 01715102713 • ✉️ mohammadbinwasy@gmail.com</div>
+        </div>
+        <div class="person">
+          <h4>Abdul Wahab Siam</h4>
+          <div class="role">President • 9th Executive Committee</div>
+          <div class="small">📞 01971529263 • ✉️ aw.siam10@gmail.com</div>
+        </div>
+        <div class="person">
+          <h4>Ridan Rahman</h4>
+          <div class="role">General Secretary • 9th Executive Committee</div>
+          <div class="small">📞 01948079972 • ✉️ ridanrahman1952@gmail.com</div>
+        </div>
+      </div>
+
+      <h3 class="section-sub" style="margin:22px 0 8px">Event‑related</h3>
+      <div class="contacts" data-reveal>
+        <div class="person">
+          <h4>Akramul H. Khan</h4>
+          <div class="role">Vice President • Planning, Organizing & Execution (8th)</div>
+          <div class="small">📞 01920119197 • ✉️ akramulhasankhan@gmail.com</div>
+        </div>
+        <div class="person">
+          <h4>Fahim Abrar Hasan</h4>
+          <div class="role">Vice President • Co‑Curriculum & Contest (8th)</div>
+          <div class="small">📞 01718983948 • ✉️ fahimabrar1129@gmail.com</div>
+        </div>
+        <div class="person">
+          <h4>Zahi Hoq</h4>
+          <div class="role">Vice President • Planning, Organizing & Execution (9th)</div>
+          <div class="small">📞 01833331457 • ✉️ zahihoq.9@gmail.com</div>
+        </div>
+        <div class="person">
+          <h4>Rayan Rehman</h4>
+          <div class="role">Vice President • Co‑Curriculum & Contest (9th)</div>
+          <div class="small">📞 01718152320 • ✉️ rayanrehman47@gmail.com</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+     © 2025 A.K.M. Saqin Noor
+  </footer>
+
+  <script>
+    // Loader vanish after DOM ready
+    window.addEventListener('load',()=>{
+      setTimeout(()=>{
+        const loader=document.getElementById('loader');
+        loader.style.transition='opacity .6s ease';
+        loader.style.opacity='0';
+        setTimeout(()=>loader.remove(),600);
+      },700);
+    });
+
+    // Scroll reveal
+    const onReveal=()=>{
+      const els=[...document.querySelectorAll('[data-reveal]')];
+      const io=new IntersectionObserver(entries=>{
+        entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('reveal'); io.unobserve(en.target); } });
+      },{threshold:.12});
+      els.forEach(el=>io.observe(el));
+    };
+    onReveal();
+  </script>
+  
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('#nav-links');
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener('click', () => {
+        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', !isExpanded);
+        navLinks.classList.toggle('active');
+        document.body.classList.toggle('no-scroll');
+      });
+
+      // Close menu when a link is clicked
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          if (navLinks.classList.contains('active')) {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            navLinks.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>
