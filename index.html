@@ -130,6 +130,25 @@
     .role{font-weight:600; opacity:.8}
     .small{font-size:.92rem}
 
+    .contact-groups {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+    .contact-group h3 {
+      font-family: 'DM Serif Display', serif;
+      color: var(--mid);
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 1.5rem;
+      border-bottom: 1px solid rgba(32,58,109,.1);
+      padding-bottom: 8px;
+    }
+    .contact-group .person + .person {
+      margin-top: 12px;
+    }
+
     /* Footer */
     footer{padding:40px 20px; text-align:center; color:#395a95}
 
@@ -591,53 +610,55 @@
   <section id="contacts">
     <div class="container">
       <h2 class="section-title" data-reveal>Contacts</h2>
-      <p class="section-sub" data-reveal style="transition-delay:.08s">Administrative & event‑related queries</p>
+      <p class="section-sub" data-reveal style="transition-delay:.08s">For any queries, please reach out to the respective committee members.</p>
 
-      <h3 class="section-sub" style="margin:18px 0 8px">Administrative</h3>
-      <div class="contacts" data-reveal>
-        <div class="person">
-          <h4>Ahmad Abid Ahsan</h4>
-          <div class="role">President • 8th Executive Committee</div>
-          <div class="small">📞 01720802197 • ✉️ abidahsan0305@gmail.com</div>
+      <div class="contact-groups">
+        <div class="contact-group" data-reveal>
+          <h3>Administrative</h3>
+          <div class="person">
+            <h4>Ahmad Abid Ahsan</h4>
+            <div class="role">President • 8th Executive Committee</div>
+            <div class="small">📞 01720802197 • ✉️ abidahsan0305@gmail.com</div>
+          </div>
+          <div class="person">
+            <h4>Md Bin Wasy</h4>
+            <div class="role">General Secretary • 8th Executive Committee</div>
+            <div class="small">📞 01715102713 • ✉️ mohammadbinwasy@gmail.com</div>
+          </div>
+          <div class="person">
+            <h4>Abdul Wahab Siam</h4>
+            <div class="role">President • 9th Executive Committee</div>
+            <div class="small">📞 01971529263 • ✉️ aw.siam10@gmail.com</div>
+          </div>
+          <div class="person">
+            <h4>Ridan Rahman</h4>
+            <div class="role">General Secretary • 9th Executive Committee</div>
+            <div class="small">📞 01948079972 • ✉️ ridanrahman1952@gmail.com</div>
+          </div>
         </div>
-        <div class="person">
-          <h4>Md Bin Wasy</h4>
-          <div class="role">General Secretary • 8th Executive Committee</div>
-          <div class="small">📞 01715102713 • ✉️ mohammadbinwasy@gmail.com</div>
-        </div>
-        <div class="person">
-          <h4>Abdul Wahab Siam</h4>
-          <div class="role">President • 9th Executive Committee</div>
-          <div class="small">📞 01971529263 • ✉️ aw.siam10@gmail.com</div>
-        </div>
-        <div class="person">
-          <h4>Ridan Rahman</h4>
-          <div class="role">General Secretary • 9th Executive Committee</div>
-          <div class="small">📞 01948079972 • ✉️ ridanrahman1952@gmail.com</div>
-        </div>
-      </div>
 
-      <h3 class="section-sub" style="margin:22px 0 8px">Event‑related</h3>
-      <div class="contacts" data-reveal>
-        <div class="person">
-          <h4>Akramul H. Khan</h4>
-          <div class="role">Vice President • Planning, Organizing & Execution (8th)</div>
-          <div class="small">📞 01920119197 • ✉️ akramulhasankhan@gmail.com</div>
-        </div>
-        <div class="person">
-          <h4>Fahim Abrar Hasan</h4>
-          <div class="role">Vice President • Co‑Curriculum & Contest (8th)</div>
-          <div class="small">📞 01718983948 • ✉️ fahimabrar1129@gmail.com</div>
-        </div>
-        <div class="person">
-          <h4>Zahi Hoq</h4>
-          <div class="role">Vice President • Planning, Organizing & Execution (9th)</div>
-          <div class="small">📞 01833331457 • ✉️ zahihoq.9@gmail.com</div>
-        </div>
-        <div class="person">
-          <h4>Rayan Rehman</h4>
-          <div class="role">Vice President • Co‑Curriculum & Contest (9th)</div>
-          <div class="small">📞 01718152320 • ✉️ rayanrehman47@gmail.com</div>
+        <div class="contact-group" data-reveal style="transition-delay:.1s">
+          <h3>Event-related</h3>
+          <div class="person">
+            <h4>Akramul H. Khan</h4>
+            <div class="role">Vice President • Planning, Organizing & Execution (8th)</div>
+            <div class="small">📞 01920119197 • ✉️ akramulhasankhan@gmail.com</div>
+          </div>
+          <div class="person">
+            <h4>Fahim Abrar Hasan</h4>
+            <div class="role">Vice President • Co‑Curriculum & Contest (8th)</div>
+            <div class="small">📞 01718983948 • ✉️ fahimabrar1129@gmail.com</div>
+          </div>
+          <div class="person">
+            <h4>Zahi Hoq</h4>
+            <div class="role">Vice President • Planning, Organizing & Execution (9th)</div>
+            <div class="small">📞 01833331457 • ✉️ zahihoq.9@gmail.com</div>
+          </div>
+          <div class="person">
+            <h4>Rayan Rehman</h4>
+            <div class="role">Vice President • Co‑Curriculum & Contest (9th)</div>
+            <div class="small">📞 01718152320 • ✉️ rayanrehman47@gmail.com</div>
+          </div>
         </div>
       </div>
     </div>
