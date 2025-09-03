@@ -104,6 +104,17 @@
     .grid.cols-2, .grid.cols-3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
     .card{background:#fff; border-radius:18px; padding:22px; border:1px solid rgba(32,58,109,.08); box-shadow:0 10px 30px rgba(32,58,109,.06)}
     .card h3{margin:6px 0 8px; font-size:1.1rem}
+    #groups .card div {
+      display: inline-block;
+      font-family: 'Sora', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--ink);
+      background: rgba(32,58,109,.06);
+      padding: 8px 16px;
+      border-radius: 8px;
+      margin-top: 4px;
+    }
     .muted{color:#3a558a}
 
     /* Events */
@@ -113,7 +124,7 @@
     summary{list-style:none; cursor:pointer; padding:18px 20px; font-weight:700; display:flex; align-items:center; justify-content:space-between}
     summary::-webkit-details-marker{display:none}
     .summary-title{display:flex; align-items:center; gap:12px}
-    .badge-round{width:28px; height:28px; border-radius:999px; background:linear-gradient(135deg,var(--mid),#8ea0c9); box-shadow:inset 0 0 0 2px rgba(255,255,255,.6); flex-shrink:0}
+    .event-icon{width:24px; height:24px; fill:var(--mid); flex-shrink:0;}
     .summary-meta{font-size:.9rem; opacity:.8}
     .details-body{padding:2px 22px 18px; color:#284a85}
 
@@ -128,7 +139,28 @@
     .person{background:#fff; border:1px solid rgba(32,58,109,.1); border-radius:14px; padding:16px}
     .person h4{margin:2px 0}
     .role{font-weight:600; opacity:.8}
-    .small{font-size:.92rem}
+    .small{
+      font-size:.92rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(32,58,109,.06);
+      padding: 5px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(32,58,109,.1);
+    }
+    .contact-item svg {
+      width: 15px;
+      height: 15px;
+      fill: var(--ink);
+      flex-shrink: 0;
+    }
 
     .contact-groups {
       display: grid;
@@ -421,7 +453,7 @@
       <div>
         <details data-reveal open>
           <summary>
-            <div class="summary-title"><span class="badge-round"></span> English Olympiad</div>
+            <div class="summary-title"><svg class="event-icon" viewBox="0 0 24 24"><path d="M12 2.5C12.41 2.5 12.79 2.66 13.09 2.96L21.04 10.91C21.66 11.53 21.66 12.47 21.04 13.09L13.09 21.04C12.47 21.66 11.53 21.66 10.91 21.04L2.96 13.09C2.34 12.47 2.34 11.53 2.96 10.91L10.91 2.96C11.21 2.66 11.59 2.5 12 2.5Z"/></svg> English Olympiad</div>
             <div class="summary-meta">Solo • 25 mins • Grammar, literature, vocab • [1‑R]</div>
           </summary>
           <div class="details-body">
@@ -430,14 +462,14 @@
         </details>
         <details data-reveal>
           <summary>
-            <div class="summary-title"><span class="badge-round"></span> Instant Story Writing</div>
+            <div class="summary-title"><svg class="event-icon" viewBox="0 0 24 24"><path d="M12 2.5C12.41 2.5 12.79 2.66 13.09 2.96L21.04 10.91C21.66 11.53 21.66 12.47 21.04 13.09L13.09 21.04C12.47 21.66 11.53 21.66 10.91 21.04L2.96 13.09C2.34 12.47 2.34 11.53 2.96 10.91L10.91 2.96C11.21 2.66 11.59 2.5 12 2.5Z"/></svg> Instant Story Writing</div>
             <div class="summary-meta">Solo • Prompt‑based • 25 mins • [1‑R]</div>
           </summary>
           <div class="details-body">Unleash the storyteller within. Receive a prompt and craft a compelling short story within the time limit.</div>
         </details>
         <details data-reveal>
           <summary>
-            <div class="summary-title"><span class="badge-round"></span> Word Game</div>
+            <div class="summary-title"><svg class="event-icon" viewBox="0 0 24 24"><path d="M12 2.5C12.41 2.5 12.79 2.66 13.09 2.96L21.04 10.91C21.66 11.53 21.66 12.47 21.04 13.09L13.09 21.04C12.47 21.66 11.53 21.66 10.91 21.04L2.96 13.09C2.34 12.47 2.34 11.53 2.96 10.91L10.91 2.96C11.21 2.66 11.59 2.5 12 2.5Z"/></svg> Word Game</div>
             <div class="summary-meta">Solo • Jumbled Words + Crossword • 25 mins • [1‑R]</div>
           </summary>
           <div class="details-body">Test vocabulary and pattern recognition with letter jumbles and a themed crossword.
@@ -445,42 +477,42 @@
         </details>
         <details data-reveal>
           <summary>
-            <div class="summary-title"><span class="badge-round"></span> Extempore Speech</div>
+            <div class="summary-title"><svg class="event-icon" viewBox="0 0 24 24"><path d="M12 2.5C12.41 2.5 12.79 2.66 13.09 2.96L21.04 10.91C21.66 11.53 21.66 12.47 21.04 13.09L13.09 21.04C12.47 21.66 11.53 21.66 10.91 21.04L2.96 13.09C2.34 12.47 2.34 11.53 2.96 10.91L10.91 2.96C11.21 2.66 11.59 2.5 12 2.5Z"/></svg> Extempore Speech</div>
             <div class="summary-meta">Solo • Topic given 3–4 mins prior • [2‑R]</div>
           </summary>
           <div class="details-body">Speak on a surprise topic with minimal prep. Top 6 per group advance to a final round.</div>
         </details>
         <details data-reveal>
           <summary>
-            <div class="summary-title"><span class="badge-round"></span> Turn Coat</div>
+            <div class="summary-title"><svg class="event-icon" viewBox="0 0 24 24"><path d="M12 2.5C12.41 2.5 12.79 2.66 13.09 2.96L21.04 10.91C21.66 11.53 21.66 12.47 21.04 13.09L13.09 21.04C12.47 21.66 11.53 21.66 10.91 21.04L2.96 13.09C2.34 12.47 2.34 11.53 2.96 10.91L10.91 2.96C11.21 2.66 11.59 2.5 12 2.5Z"/></svg> Turn Coat</div>
             <div class="summary-meta">Solo • For/Against same topic • [2‑R] (S, C)</div>
           </summary>
           <div class="details-body">Argue both sides of a motion with timed flips. Preliminary: 1.5+1.5 mins; Final: 2+2 mins.</div>
         </details>
         <details data-reveal>
           <summary>
-            <div class="summary-title"><span class="badge-round"></span> Quizmania</div>
+            <div class="summary-title"><svg class="event-icon" viewBox="0 0 24 24"><path d="M12 2.5C12.41 2.5 12.79 2.66 13.09 2.96L21.04 10.91C21.66 11.53 21.66 12.47 21.04 13.09L13.09 21.04C12.47 21.66 11.53 21.66 10.91 21.04L2.96 13.09C2.34 12.47 2.34 11.53 2.96 10.91L10.91 2.96C11.21 2.66 11.59 2.5 12 2.5Z"/></svg> Quizmania</div>
             <div class="summary-meta">Solo quiz • 25 mins • [1‑R]</div>
           </summary>
           <div class="details-body">From Literature to Sherlock, Potterhead, Marvel/DC and Sports—pick your passion and ace the paper.</div>
         </details>
         <details data-reveal>
           <summary>
-            <div class="summary-title"><span class="badge-round"></span> Outline Movies</div>
+            <div class="summary-title"><svg class="event-icon" viewBox="0 0 24 24"><path d="M12 2.5C12.41 2.5 12.79 2.66 13.09 2.96L21.04 10.91C21.66 11.53 21.66 12.47 21.04 13.09L13.09 21.04C12.47 21.66 11.53 21.66 10.91 21.04L2.96 13.09C2.34 12.47 2.34 11.53 2.96 10.91L10.91 2.96C11.21 2.66 11.59 2.5 12 2.5Z"/></svg> Outline Movies</div>
             <div class="summary-meta">Solo • 25 mins • [1‑R]</div>
           </summary>
           <div class="details-body">Summarize a movie’s arc with clarity and style—no spoilers needed, just great storytelling.</div>
         </details>
         <details data-reveal>
           <summary>
-            <div class="summary-title"><span class="badge-round"></span> Spell Master</div>
+            <div class="summary-title"><svg class="event-icon" viewBox="0 0 24 24"><path d="M12 2.5C12.41 2.5 12.79 2.66 13.09 2.96L21.04 10.91C21.66 11.53 21.66 12.47 21.04 13.09L13.09 21.04C12.47 21.66 11.53 21.66 10.91 21.04L2.96 13.09C2.34 12.47 2.34 11.53 2.96 10.91L10.91 2.96C11.21 2.66 11.59 2.5 12 2.5Z"/></svg> Spell Master</div>
             <div class="summary-meta">Written + Verbal • [2‑R]</div>
           </summary>
           <div class="details-body">Round 1: 30‑min written spell test. Round 2: on‑stage verbal for the title of master speller.</div>
         </details>
         <details data-reveal>
           <summary>
-            <div class="summary-title"><span class="badge-round"></span> Submissions</div>
+            <div class="summary-title"><svg class="event-icon" viewBox="0 0 24 24"><path d="M12 2.5C12.41 2.5 12.79 2.66 13.09 2.96L21.04 10.91C21.66 11.53 21.66 12.47 21.04 13.09L13.09 21.04C12.47 21.66 11.53 21.66 10.91 21.04L2.96 13.09C2.34 12.47 2.34 11.53 2.96 10.91L10.91 2.96C11.21 2.66 11.59 2.5 12 2.5Z"/></svg> Submissions</div>
             <div class="summary-meta">Wall Magazine • Scrapbook • Sketch • Photography • Article</div>
           </summary>
           <div class="details-body">
@@ -493,49 +525,49 @@
         </details>
         <details data-reveal>
           <summary>
-            <div class="summary-title"><span class="badge-round"></span> Mega / Team Quiz</div>
+            <div class="summary-title"><svg class="event-icon" viewBox="0 0 24 24"><path d="M12 2.5C12.41 2.5 12.79 2.66 13.09 2.96L21.04 10.91C21.66 11.53 21.66 12.47 21.04 13.09L13.09 21.04C12.47 21.66 11.53 21.66 10.91 21.04L2.96 13.09C2.34 12.47 2.34 11.53 2.96 10.91L10.91 2.96C11.21 2.66 11.59 2.5 12 2.5Z"/></svg> Mega / Team Quiz</div>
             <div class="summary-meta">Teams of 3–5 • Written prelim + Stage buzzer • 6k prize pool</div>
           </summary>
           <div class="details-body">Top six teams reach a buzzer final; open team composition across institutions. Prizes: 3k / 2k / 1k.</div>
         </details>
         <details data-reveal>
           <summary>
-            <div class="summary-title"><span class="badge-round"></span> Multimedia + Animation Presentation</div>
+            <div class="summary-title"><svg class="event-icon" viewBox="0 0 24 24"><path d="M12 2.5C12.41 2.5 12.79 2.66 13.09 2.96L21.04 10.91C21.66 11.53 21.66 12.47 21.04 13.09L13.09 21.04C12.47 21.66 11.53 21.66 10.91 21.04L2.96 13.09C2.34 12.47 2.34 11.53 2.96 10.91L10.91 2.96C11.21 2.66 11.59 2.5 12 2.5Z"/></svg> Multimedia + Animation Presentation</div>
             <div class="summary-meta">Teams of 2 • 5‑min presentation • Single round</div>
           </summary>
           <div class="details-body">Create and deliver a polished multimedia pitch. Bring your own laptop/device. Content must respect guidelines.</div>
         </details>
         <details data-reveal>
           <summary>
-            <div class="summary-title"><span class="badge-round"></span> Sports Quiz</div>
+            <div class="summary-title"><svg class="event-icon" viewBox="0 0 24 24"><path d="M12 2.5C12.41 2.5 12.79 2.66 13.09 2.96L21.04 10.91C21.66 11.53 21.66 12.47 21.04 13.09L13.09 21.04C12.47 21.66 11.53 21.66 10.91 21.04L2.96 13.09C2.34 12.47 2.34 11.53 2.96 10.91L10.91 2.96C11.21 2.66 11.59 2.5 12 2.5Z"/></svg> Sports Quiz</div>
             <div class="summary-meta">Solo written • [1‑R]</div>
           </summary>
           <div class="details-body">All things sport—from classics to current highlights.</div>
         </details>
         <details data-reveal>
           <summary>
-            <div class="summary-title"><span class="badge-round"></span> Poem Recitation</div>
+            <div class="summary-title"><svg class="event-icon" viewBox="0 0 24 24"><path d="M12 2.5C12.41 2.5 12.79 2.66 13.09 2.96L21.04 10.91C21.66 11.53 21.66 12.47 21.04 13.09L13.09 21.04C12.47 21.66 11.53 21.66 10.91 21.04L2.96 13.09C2.34 12.47 2.34 11.53 2.96 10.91L10.91 2.96C11.21 2.66 11.59 2.5 12 2.5Z"/></svg> Poem Recitation</div>
             <div class="summary-meta">Solo performance • [2‑R]</div>
           </summary>
           <div class="details-body">Choose any poem; top 6 per group progress to the final performance.</div>
         </details>
         <details data-reveal>
           <summary>
-            <div class="summary-title"><span class="badge-round"></span> Blog</div>
+            <div class="summary-title"><svg class="event-icon" viewBox="0 0 24 24"><path d="M12 2.5C12.41 2.5 12.79 2.66 13.09 2.96L21.04 10.91C21.66 11.53 21.66 12.47 21.04 13.09L13.09 21.04C12.47 21.66 11.53 21.66 10.91 21.04L2.96 13.09C2.34 12.47 2.34 11.53 2.96 10.91L10.91 2.96C11.21 2.66 11.59 2.5 12 2.5Z"/></svg> Blog</div>
             <div class="summary-meta">Solo writing • 25 mins • [1‑R] (J,S)</div>
           </summary>
           <div class="details-body">Write like a digital storyteller: clarity, voice and audience engagement matter.</div>
         </details>
         <details data-reveal>
           <summary>
-            <div class="summary-title"><span class="badge-round"></span> Graffiti</div>
+            <div class="summary-title"><svg class="event-icon" viewBox="0 0 24 24"><path d="M12 2.5C12.41 2.5 12.79 2.66 13.09 2.96L21.04 10.91C21.66 11.53 21.66 12.47 21.04 13.09L13.09 21.04C12.47 21.66 11.53 21.66 10.91 21.04L2.96 13.09C2.34 12.47 2.34 11.53 2.96 10.91L10.91 2.96C11.21 2.66 11.59 2.5 12 2.5Z"/></svg> Graffiti</div>
             <div class="summary-meta">Solo art • 1 hour • [1‑R]</div>
           </summary>
           <div class="details-body">Turn a blank board into bold expression—impactful, original, unmistakably you.</div>
         </details>
         <details data-reveal>
           <summary>
-            <div class="summary-title"><span class="badge-round"></span> Signature Event: 404 Not Found</div>
+            <div class="summary-title"><svg class="event-icon" viewBox="0 0 24 24"><path d="M12 2.5C12.41 2.5 12.79 2.66 13.09 2.96L21.04 10.91C21.66 11.53 21.66 12.47 21.04 13.09L13.09 21.04C12.47 21.66 11.53 21.66 10.91 21.04L2.96 13.09C2.34 12.47 2.34 11.53 2.96 10.91L10.91 2.96C11.21 2.66 11.59 2.5 12 2.5Z"/></svg> Signature Event: 404 Not Found</div>
             <div class="summary-meta">Teams of 2 • Race‑style puzzle hunt • 6k prize pool</div>
           </summary>
           <div class="details-body">A high‑energy chase through riddles, tasks and hidden clues. Fastest team to the destination wins. Prizes: 3k / 2k / 1k.</div>
@@ -618,22 +650,34 @@
           <div class="person">
             <h4>Ahmad Abid Ahsan</h4>
             <div class="role">President • 8th Executive Committee</div>
-            <div class="small">📞 01720802197 • ✉️ abidahsan0305@gmail.com</div>
+            <div class="small">
+              <span class="contact-item"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> 01720802197</span>
+              <span class="contact-item"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> abidahsan0305@gmail.com</span>
+            </div>
           </div>
           <div class="person">
             <h4>Md Bin Wasy</h4>
             <div class="role">General Secretary • 8th Executive Committee</div>
-            <div class="small">📞 01715102713 • ✉️ mohammadbinwasy@gmail.com</div>
+            <div class="small">
+              <span class="contact-item"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> 01715102713</span>
+              <span class="contact-item"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> mohammadbinwasy@gmail.com</span>
+            </div>
           </div>
           <div class="person">
             <h4>Abdul Wahab Siam</h4>
             <div class="role">President • 9th Executive Committee</div>
-            <div class="small">📞 01971529263 • ✉️ aw.siam10@gmail.com</div>
+            <div class="small">
+              <span class="contact-item"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> 01971529263</span>
+              <span class="contact-item"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> aw.siam10@gmail.com</span>
+            </div>
           </div>
           <div class="person">
             <h4>Ridan Rahman</h4>
             <div class="role">General Secretary • 9th Executive Committee</div>
-            <div class="small">📞 01948079972 • ✉️ ridanrahman1952@gmail.com</div>
+            <div class="small">
+              <span class="contact-item"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> 01948079972</span>
+              <span class="contact-item"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> ridanrahman1952@gmail.com</span>
+            </div>
           </div>
         </div>
 
@@ -642,22 +686,34 @@
           <div class="person">
             <h4>Akramul H. Khan</h4>
             <div class="role">Vice President • Planning, Organizing & Execution (8th)</div>
-            <div class="small">📞 01920119197 • ✉️ akramulhasankhan@gmail.com</div>
+            <div class="small">
+              <span class="contact-item"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> 01920119197</span>
+              <span class="contact-item"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> akramulhasankhan@gmail.com</span>
+            </div>
           </div>
           <div class="person">
             <h4>Fahim Abrar Hasan</h4>
             <div class="role">Vice President • Co‑Curriculum & Contest (8th)</div>
-            <div class="small">📞 01718983948 • ✉️ fahimabrar1129@gmail.com</div>
+            <div class="small">
+              <span class="contact-item"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> 01718983948</span>
+              <span class="contact-item"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> fahimabrar1129@gmail.com</span>
+            </div>
           </div>
           <div class="person">
             <h4>Zahi Hoq</h4>
             <div class="role">Vice President • Planning, Organizing & Execution (9th)</div>
-            <div class="small">📞 01833331457 • ✉️ zahihoq.9@gmail.com</div>
+            <div class="small">
+              <span class="contact-item"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> 01833331457</span>
+              <span class="contact-item"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> zahihoq.9@gmail.com</span>
+            </div>
           </div>
           <div class="person">
             <h4>Rayan Rehman</h4>
             <div class="role">Vice President • Co‑Curriculum & Contest (9th)</div>
-            <div class="small">📞 01718152320 • ✉️ rayanrehman47@gmail.com</div>
+            <div class="small">
+              <span class="contact-item"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> 01718152320</span>
+              <span class="contact-item"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> rayanrehman47@gmail.com</span>
+            </div>
           </div>
         </div>
       </div>
@@ -697,6 +753,7 @@
     if (menuToggle && mobileMenu) {
       menuToggle.addEventListener('click', () => {
         const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+       
         menuToggle.setAttribute('aria-expanded', !isExpanded);
         mobileMenu.classList.toggle('active');
         document.body.classList.toggle('no-scroll');
