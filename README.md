@@ -2,7 +2,7 @@
 
 ## 1. Overview
 
-This repository contains the source code for the promotional single-page website for the "6th National English Language Carnival 2025," hosted by the Ideal English Language Club (IELC). You can see this site in action at https://6thnelc.vercel.app/.
+This repository contains the source code for the promotional single-page website for the "6th National English Language Carnival 2025," hosted by the Ideal English Language Club (IELC). You can see this site in action at https://6thnelc.saqinnoor.dpdns.org/.
 
 ## 2. File Structure
 
