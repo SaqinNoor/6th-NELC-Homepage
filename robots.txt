@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://6thnelc.saqinnoor.dpdns.org/sitemap.xml
