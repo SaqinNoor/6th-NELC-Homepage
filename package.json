@@ -1,0 +1,8 @@
+{
+  "name": "6th-nelc-homepage",
+  "private": true,
+  "scripts": {
+    "sitemap": "node scripts/generate-sitemap.mjs",
+    "build": "node scripts/generate-sitemap.mjs"
+  }
+}
