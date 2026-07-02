@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://6thnelc.saqinnoor.dpdns.org/sitemap.xml
+Sitemap: https://6thnelc.vercel.app/sitemap.xml
